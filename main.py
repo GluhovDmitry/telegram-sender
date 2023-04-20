@@ -1,5 +1,7 @@
 from aiohttp import web
 
+import config as cfg
+
 from views import send_message_telegram
 
 
@@ -10,7 +12,8 @@ async def init_app():
 
 
 def main():
-    web.run_app(init_app())
+    web.run_app(init_app(), port=cfg.PORT)
+
 
 if __name__ == '__main__':
     main()
